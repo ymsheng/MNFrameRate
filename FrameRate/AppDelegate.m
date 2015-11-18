@@ -24,8 +24,8 @@
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     
-
-    [MNFrameRate sharedFrameRate].enabled = YES;
+    ///after window init, open FPS. MNFrameRate add view to keyWindow
+    [MNFrameRate sharedFrameRate].enabled = YES;  ///YES打开，NO关闭
     
     return YES;
 }

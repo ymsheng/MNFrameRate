@@ -42,7 +42,7 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 - (instancetype)init
 {
     if (self=[super init]) {
-    
+        ///此处可以修改FPS显示的位置
         self.rateLabel = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-120, 0,65, 20)];
         self.rateLabel.font = [UIFont boldSystemFontOfSize:12.0];
         self.rateLabel.backgroundColor = [UIColor grayColor];
@@ -82,7 +82,6 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 - (void)enable
 {
     self.rateLabel.hidden = NO;
-//    self.hidden = NO;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive) name:UIApplicationWillResignActiveNotification object:nil];
     
@@ -96,7 +95,6 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.running = NO;
     self.rateLabel.hidden = YES;
-//    self.hidden = YES;
 }
 
 #pragma mark -
