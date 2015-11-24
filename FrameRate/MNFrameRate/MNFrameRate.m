@@ -16,8 +16,6 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 {
     double currentSecondRate[kHardwareFramesPerSecond];
     int frameCounter;
-    
-    int _lastTime;
 }
 
 @property (nonatomic) BOOL running;
