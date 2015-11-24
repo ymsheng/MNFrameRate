@@ -16,6 +16,8 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 {
     double currentSecondRate[kHardwareFramesPerSecond];
     int frameCounter;
+    
+    int _lastTime;
 }
 
 @property (nonatomic) BOOL running;
@@ -48,7 +50,7 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
         self.rateLabel.backgroundColor = [UIColor grayColor];
         self.rateLabel.textColor = [UIColor whiteColor];
         self.rateLabel.textAlignment = NSTextAlignmentCenter;
-
+        
         [[[UIApplication sharedApplication] keyWindow] addSubview:self.rateLabel];
         
     }
@@ -118,11 +120,11 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
     [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
     
-    SKScene *scene = [SKScene new];
-    self.sceneView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    [self.sceneView presentScene:scene];
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:self.sceneView];
+    //    SKScene *scene = [SKScene new];
+    //    self.sceneView = [[SKView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    //    [self.sceneView presentScene:scene];
+    //
+    //    [[UIApplication sharedApplication].keyWindow addSubview:self.sceneView];
 }
 
 - (void)stop
@@ -139,15 +141,15 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 - (void)displayLinkWillDraw:(CADisplayLink *)link
 {
     [self updateFrameTimer:link.timestamp];
-    ///update
     int lostCount = [self lostFrameCountCurrentSecond];
     int drawCount = [self drawFrameCountCurrentSecond:lostCount];
-
+    
+    
     NSString *lostString = [NSString stringWithFormat:@"%d",lostCount];
     NSString *drwaString = [NSString stringWithFormat:@"%d",drawCount];
     if (lostCount<= 0) {
         lostString = @"--";
-        self.rateLabel.backgroundColor = [UIColor greenColor];
+        self.rateLabel.backgroundColor = [UIColor colorWithRed:0.1 green:0.8 blue:0.1 alpha:1];
     }
     else if(lostCount<=2){
         self.rateLabel.backgroundColor = [UIColor colorWithRed:0.1 green:0.8 blue:0.1 alpha:1];
@@ -161,6 +163,7 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
     if (drawCount==-1) {
         drwaString = @"--";
     }
+    
     
     self.rateLabel.text = [NSString stringWithFormat:@"%@    %@",lostString,drwaString];
 }
