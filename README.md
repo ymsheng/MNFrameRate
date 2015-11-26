@@ -1,5 +1,5 @@
 # MNFrameRate
-iOS测试FPS的工具 （支持iOS7及以上）
+iOS测试FPS的工具 （支持iOS6及以上）
 
 ### 在iOS开发时，我们经常要注意屏幕渲染是否卡。通过检测每秒的丢桢数，计算得出FPS.
 #### 1、把本工程中的MNFrameRate两个添加到自己的项目中
