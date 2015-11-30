@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MNFrameRate"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "for ios develop to check fps"
 
   s.description  = <<-DESC
@@ -65,11 +65,11 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "6.0"
+  s.platform     = :ios
+  s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "6.0"
+  s.ios.deployment_target = "6.0"
   # s.osx.deployment_target = "10.7"
 
 
@@ -116,8 +116,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit.framework"
-  #s.frameworks = "UIKit.Framework", "AnotherFramework"
+  #s.framework  = "UIKit"
+  s.frameworks = "UIKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
