@@ -11,3 +11,5 @@
 ####### 1.在Podfile 中添加 pod 'MNFrameRate'
 ####### 2.执行 pod install 或 pod update
 ####### 3.在使用类中 #import "MNFrameRate.h"
+
+#### 了解CocoaPods
