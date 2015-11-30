@@ -7,7 +7,6 @@
 //
 
 #import "MNFrameRate.h"
-#import <SpriteKit/SpriteKit.h>
 
 #define kHardwareFramesPerSecond 60
 static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
@@ -22,7 +21,6 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 
 @property (strong,nonatomic) UILabel *rateLabel;
 
-@property (nonatomic, strong) SKView *sceneView;
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @end
@@ -127,8 +125,8 @@ static double const kNormalFrameDuration = 1.0 / kHardwareFramesPerSecond;
 
 - (void)stop
 {
-    [self.sceneView removeFromSuperview];
-    self.sceneView = nil;
+//    [self.sceneView removeFromSuperview];
+//    self.sceneView = nil;
     
     [self.displayLink invalidate];
     self.displayLink = nil;
