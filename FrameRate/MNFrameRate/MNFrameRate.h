@@ -11,7 +11,7 @@
 
 @interface MNFrameRate : NSObject
 
-//[MNFrameRate sharedFrameRate].enabled = YES -application:didFinishLaunchingWithOptions:
+///[MNFrameRate sharedFrameRate].enabled = YES -application:didFinishLaunchingWithOptions:
 @property (nonatomic,assign,getter=isEnabled) BOOL enabled;
 
 
