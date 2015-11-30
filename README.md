@@ -13,3 +13,4 @@
 ####### 3.在使用类中 #import "MNFrameRate.h"
 
 #### 了解CocoaPods
+http://ymsheng.github.io/cocoapods.html
