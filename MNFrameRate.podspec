@@ -16,13 +16,13 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MNFrameRate"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "for ios develop to check fps"
 
   s.description  = <<-DESC
                    A longer description of MNFrameRate in Markdown format.
 
-	           * Write MNFrameRate for developer check if the UI draw fluent
+	           Write MNFrameRate for developer check if the UI draw fluent
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.
                    * Try to keep it short, snappy and to the point.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ymsheng/MNFrameRate.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/ymsheng/MNFrameRate.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
